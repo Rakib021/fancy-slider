@@ -28,6 +28,16 @@ const showImages = (images) => {
 
 }
 
+var searchText = document.getElementById("search")
+.addEventListener("keypress", function(event) {
+ 
+   
+    if (event.key == 'Enter'){
+      document.getElementById("search-btn").click();
+    }
+    
+});
+
 const getImages = (query) => {
   fetch(`https://pixabay.com/api/?key=${KEY}=${query}&image_type=photo&pretty=true`)
     .then(response => response.json())
